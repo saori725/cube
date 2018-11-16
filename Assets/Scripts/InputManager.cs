@@ -6,6 +6,11 @@ public class InputManager : MonoBehaviour
 {
 
     InputField inputField;
+    private string inputNum;
+    private int n;
+    public AudioClip correctSound;
+    public AudioClip incorrectSound;
+    public Text judgment;
 
 
     /// <summary>
@@ -55,5 +60,24 @@ public class InputManager : MonoBehaviour
         // フォーカス
         inputField.ActivateInputField();
     }
+
+
+    void Update()
+    {
+        // キーボードからの入力情報を取得する。
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+
+            // （ポイント）スクリプトは「InputField」につける。
+            // InputFieldのtextプロパティから入力値を取得する。
+            inputNum = this.gameObject.GetComponent<InputField>().text;
+
+            // 入力値は「string型」なのでこれを「int型」に変換する。
+            n = int.Parse(inputNum);
+
+            transform.position = new Vector3(n , 0 ,0);
+        }
+    }
+
 
 }
