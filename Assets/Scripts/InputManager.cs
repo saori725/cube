@@ -8,9 +8,6 @@ public class InputManager : MonoBehaviour
     InputField inputField;
     private string inputNum;
     private int n;
-    public AudioClip correctSound;
-    public AudioClip incorrectSound;
-    public Text judgment;
 
 
     /// <summary>
@@ -78,6 +75,4 @@ public class InputManager : MonoBehaviour
             transform.position = new Vector3(n , 0 ,0);
         }
     }
-
-
 }
